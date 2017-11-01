@@ -66,11 +66,17 @@ void Bibliotek::listLaanersLaan(string l)
 }
 
 
+string Bibliotek::getForfatterNavn(int i)
+{
+	return udlaant[i].getEksemplar().getBog().getForfatter().getName();
+}
+
+
 string Bibliotek::findMestPopulaereForfatter()
 {
 	for (int i = 1; i < udlaant.size(); ++i)
 	{
-		if (udlaant[i - 1].getEksemplar().getBog().getForfatter().getName() < udlaant[i].getEksemplar().getBog().getForfatter().getName())
+		if (getForfatterNavn(i - 1) < getForfatterNavn(i))
 		{
 			udlaant.push_back(udlaant[i - 1]);
 			udlaant.erase(udlaant.begin() + i - 1);
@@ -78,13 +84,13 @@ string Bibliotek::findMestPopulaereForfatter()
 		}
 	}
 
-	string name1 = udlaant[0].getEksemplar().getBog().getForfatter().getName();
+	string name1 = getForfatterNavn(0);
 	int udlaan1 = 0;
 	string name2 = "";
 	int udlaan2 = 0;
 	for (int i = 0; i < udlaant.size(); ++i)
 	{
-		if (name1 == udlaant[i].getEksemplar().getBog().getForfatter().getName())
+		if (name1 == getForfatterNavn(i))
 		{
 			udlaan1++;
 		}
@@ -96,7 +102,7 @@ string Bibliotek::findMestPopulaereForfatter()
 				name2 = name1;
 			}
 			udlaan1 = 0;
-			name1 = udlaant[i].getEksemplar().getBog().getForfatter().getName();
+			name1 = getForfatterNavn(i);
 			i--;
 		}
 	}

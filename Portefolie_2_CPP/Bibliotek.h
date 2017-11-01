@@ -19,5 +19,6 @@ private:
 	Eksemplar eksemplar;
 	vector<Eksemplar> samling;
 	vector<Udlaan> udlaant;
+	string getForfatterNavn(int);
 };
 
