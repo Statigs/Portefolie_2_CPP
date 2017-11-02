@@ -74,6 +74,7 @@ string Bibliotek::getForfatterNavn(int i)
 
 string Bibliotek::findMestPopulaereForfatter()
 {
+	//Sorteringsalgoritme
 	for (int i = 1; i < udlaant.size(); ++i)
 	{
 		if (getForfatterNavn(i - 1) < getForfatterNavn(i))
@@ -83,7 +84,7 @@ string Bibliotek::findMestPopulaereForfatter()
 			i--;
 		}
 	}
-
+	//Counting
 	string name1 = getForfatterNavn(0);
 	int udlaan1 = 0;
 	string name2 = "";

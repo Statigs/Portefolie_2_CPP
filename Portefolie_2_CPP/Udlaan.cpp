@@ -23,7 +23,7 @@ Eksemplar Udlaan::getEksemplar()
 
 int Udlaan::getDato()
 {
-	return dato.getDato();
+	return dato.returndate();
 }
 
 

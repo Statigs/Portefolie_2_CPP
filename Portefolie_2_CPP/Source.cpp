@@ -4,7 +4,6 @@
 #include "Laaner.h"
 #include "Udlaan.h"
 #include "Bibliotek.h"
-#include <vector>
 #include <iostream>
 using namespace std;
 int main()
@@ -39,7 +38,7 @@ int main()
 
 	Laaner po("Petrine Ottesen", 101);
 	Udlaan udl1(Dato(20161026), po, eks1);
-	Udlaan udl2(Dato(20161030), po, eks5);
+	Udlaan udl2(Dato(20160101), po, eks5);
 	Udlaan udl3(Dato(20161029), po, eks3);
 
 	bib.tilfoejUdl(udl1);
